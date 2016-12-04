@@ -16,6 +16,8 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 h1, h2, h3 {font-family: 'Open Sans', sans-serif;}
 
@@ -45,4 +47,4 @@ h1, h2, h3 {font-family: 'Open Sans', sans-serif;}
     margin-top: -20px;
     padding:50px 0 100px 0;
     color: #ededed;
-}
+}    
