@@ -19,6 +19,7 @@
 
 h1, h2, h3 {font-family: 'Open Sans', sans-serif;}
 
+//Background gradient
 .home-callout, .navbar {
     //Gradient provided by @_ighosh at uigradients.com
     background: #83a4d4; /* fallback for old browsers */
@@ -26,25 +27,20 @@ h1, h2, h3 {font-family: 'Open Sans', sans-serif;}
     background: linear-gradient(top right, #83a4d4 , #b6fbff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+// Navbar styles
 .navbar {
     border: none;
 }
 
-.navbar-default .navbar-brand {
+.navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a {
   color: white;
-}
-.navbar-default .navbar-nav > li > a {
-  color: white;
-}
-.navbar-default .navbar-brand:hover {
-  color: white;
-  opacity: 0.75;
-}
-.navbar-default .navbar-nav > li > a:hover {
-  color: white;
-  opacity: 0.75;
+      &:hover{
+          color: white;
+          opacity: 0.75;
+      }
 }
 
+//Home page styles
 .home-callout {
     margin-top: -20px;
     padding:50px 0 100px 0;
