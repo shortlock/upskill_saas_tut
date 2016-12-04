@@ -30,6 +30,21 @@ h1, h2, h3 {font-family: 'Open Sans', sans-serif;}
     border: none;
 }
 
+.navbar-default .navbar-brand {
+  color: white;
+}
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+.navbar-default .navbar-brand:hover {
+  color: white;
+  opacity: 0.75;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: white;
+  opacity: 0.75;
+}
+
 .home-callout {
     margin-top: -20px;
     padding:50px 0 100px 0;
