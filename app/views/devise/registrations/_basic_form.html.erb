@@ -3,7 +3,7 @@
 
   <div class="field form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: false, class: "form-control" %>
+    <%= f.email_field :email, autofocus: false, class: "form-control", required: true, type: 'email' %>
   </div>
 
   <div class="field form-group">
@@ -11,14 +11,14 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control", required: true, minlength: 6 %>
   </div>
 
   <div class="field form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", required: true, minlength: 6 %>
   </div>
-
+  
   <div class="actions">
     <%= f.submit "Sign up", class: "btn btn-success" %>
   </div>
