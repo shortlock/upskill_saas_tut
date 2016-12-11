@@ -1,18 +1,18 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
@@ -23,62 +23,71 @@ h1, h2, h3 {font-family: 'Open Sans', sans-serif;}
 
 //Background gradient
 .home-callout, .navbar {
-    //Gradient provided by @_ighosh at uigradients.com
-    background: #83a4d4; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #83a4d4 , #b6fbff); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #83a4d4 , #b6fbff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  //Gradient provided by @_ighosh at uigradients.com
+  background: #83a4d4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #83a4d4 , #b6fbff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #83a4d4 , #b6fbff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 // Navbar styles
 .navbar {
-    border: none;
+  border: none;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: white;
+background-color: white;
 }
 
 .navbar-default .navbar-toggle {
   border: 2px solid white;
-  &:hover, &:focus {
-    background-color: #83a4d4;
-  }
+    &:hover, &:focus {
+      background-color: #83a4d4;
+    }
 }
 
 .navbar-brand{
-    font-family: 'Open-Sans', sans-serif;
-    font-weight: 800;
+  font-family: 'Open-Sans', sans-serif;
+  font-weight: 800;
 }
 
 .navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a {
-  color: white;
-      &:hover{
-          color: white;
-          opacity: 0.75;
-      }
+color: white;
+    &:hover{
+      color: white;
+      opacity: 0.75;
+    }
 }
 
 //Home page styles
 .home-callout {
-    margin-top: -20px;
-    padding:50px 0 100px 0;
-    color: #fafafa;
+  margin-top: -20px;
+  padding:50px 0 100px 0;
+  color: #fafafa;
 }    
 
 .home-signup-links {
-    margin-top: 30px;
+  margin-top: 30px;
+}
+
+.flash-container {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.alert-notice, .alert-alert {
+  text-align: center;
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.5);
+  margin-top: -14px ;
 }
 
 //Contact page styles
 textarea { 
-   /* will prevent resizing horizontally */
-   resize:vertical;
+ /* will prevent resizing horizontally */
+ resize:vertical;
 }
 
 .mt-5 {
-    margin-top: 5px;
-}
-
-.alert-notice {
-  display: none;
+  margin-top: 5px;
 }
