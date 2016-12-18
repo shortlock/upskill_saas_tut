@@ -31,7 +31,7 @@ class ContactsController < ApplicationController
             redirect_to new_contact_path
         end
     end
-    
+
     private
         # To collect data from from we need to use 
         # strong parameters and whitelist form fields
