@@ -28,7 +28,7 @@ class ContactsController < ApplicationController
             # store errors in flash hash
             # and redirect to the new action
             flash[:danger] = @contact.errors.full_messages.join(", ")
-            redirect_to new_contact_path
+            render action :new
         end
     end
 
