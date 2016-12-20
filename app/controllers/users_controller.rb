@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find( params[:id])
     @profile = Profile.where(user_id: params[:id])
-
   end
   
   def index
@@ -14,8 +13,8 @@ class UsersController < ApplicationController
   end
   private
   def select_user
-    unless User.exists?(params[:id])
-      flash[:notice] = "User does not exist."
+    unless Profile.where(user_id: params[:id]).exists?
+      flash[:notice] = "User or profile does not exist."
       redirect_to root_url
     end
   def is_logged_in?
