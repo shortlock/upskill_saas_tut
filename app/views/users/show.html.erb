@@ -10,6 +10,7 @@
         <%= " #{@user.profile.last_name}" %></h1><br>
         <h3><%= @user.profile.job_title %></h3><br>
         <hr>
+        <h3><u>Contact Info</u></h3><br>
         <% if current_user.plan_id == 2 %>
         <i class="fa fa-envelope" aria-hidden="true">&nbsp&nbsp&nbsp</i>
         <%= @user.profile.contact_email %><br>
@@ -18,6 +19,7 @@
         <%= @user.profile.phone_number %><br>
         <% end %>
         <hr>
+        <h3><u>Description</u></h3>
         <%= @user.profile.description %><br>
       </div>
   </div>

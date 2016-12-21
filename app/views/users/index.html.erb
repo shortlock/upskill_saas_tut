@@ -12,16 +12,18 @@
             <%= " #{p.last_name}" %></h1><br>
             <h3><%= p.job_title %></h3><br>
             <hr>
+            <h3><u>Contact Info</u></h3><br>
             <% if current_user.plan_id == 2 %>
-            <i class="fa fa-envelope" aria-hidden="true">&nbsp&nbsp&nbsp</i>
-            <%= p.contact_email %><br>
-            <br>
-            <i class="fa fa-phone" aria-hidden="true">&nbsp&nbsp&nbsp</i>
-            <%= p.phone_number %><br>
+              <i class="fa fa-envelope" aria-hidden="true">&nbsp&nbsp&nbsp</i>
+              <%= p.contact_email %><br>
+              <br>
+              <i class="fa fa-phone" aria-hidden="true">&nbsp&nbsp&nbsp</i>
+              <%= p.phone_number %><br>
             <% else %>
-            <p class="help-block">Become a pro member to get see contact details.</p>
+              <p class="help-block">Become a pro member to get see contact details.</p>
             <% end %>
             <hr>
+            <h3><u>Description</u></h3>
             <%= p.description %><br>
           </div>
       </div>
