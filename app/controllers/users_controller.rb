@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :select_user, :is_logged_in?
+  before_action :select_user ,:is_logged_in?
   
   # GET to /users/:id
   def show
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
   private
   def select_user
-    unless Profile.where(user_id: params[:id]).exists?
+    unless Profile.where(user_id: params[:id]).exists? || params[:action] == "index"
       flash[:notice] = "User or profile does not exist."
       redirect_to root_url
     end

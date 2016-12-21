@@ -1,4 +1,4 @@
-<div class="container mt-100">
+<div class="container mt-100 shdw">
   <div class="row">
     <div class="col-md-3">
       <%= image_tag @user.profile.avatar.url(:medium) %><br>
@@ -8,15 +8,17 @@
       <div class="col-md-6">
         <h1><%= @user.profile.first_name %>
         <%= " #{@user.profile.last_name}" %></h1><br>
-        <h3><%= @user.profile.job_title %></h3><br>
+        <h3><span class="job-title-icon"><%= job_title_icon %></span><%= @user.profile.job_title %></h3><br>
         <hr>
         <h3><u>Contact Info</u></h3><br>
         <% if current_user.plan_id == 2 %>
-        <i class="fa fa-envelope" aria-hidden="true">&nbsp&nbsp&nbsp</i>
+        <span><i class='fa fa-envelope fa-lg aria-hidden="true"'></i>&nbsp&nbsp&nbsp</span>
         <%= @user.profile.contact_email %><br>
-        <br>
-        <i class="fa fa-phone" aria-hidden="true">&nbsp&nbsp&nbsp</i>
+          <br>
+        <span><i class='fa fa-phone fa-lg aria-hidden="true"'></i>&nbsp&nbsp&nbsp&nbsp&nbsp</span>
         <%= @user.profile.phone_number %><br>
+        <% else %>
+          <p class="help-block">Become a pro member to see contact details.</p>
         <% end %>
         <hr>
         <h3><u>Description</u></h3>
