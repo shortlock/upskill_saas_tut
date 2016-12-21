@@ -1,12 +1,20 @@
-<%= form_for @profile, url: user_profile_path, html: {class: "form-horizontal"} do |f| %>
+<%= form_for @profile, url: user_profile_path, html: {class: "form-horizontal", :multipart => true} do |f| %>
   <div class="form-group">
-    <%= f.label :name, class: "col-md-2 text-center" %>
-    <!--<%= f.label :last_name, class: "col-md-5 text-center" %>-->
-    <div class="col-md-5">
+    <%= f.label "first name:", class: "col-md-2" %>
+    <div class="col-md-10">
       <%= f.text_field :first_name, class: "form-control", placeholder: "First Name"%>
     </div>
-    <div class="col-md-5">
+  </div>  
+  <div class="form-group">
+    <%= f.label :last_name, class: "col-md-2 text-center" %>
+    <div class="col-md-10">
       <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name"%>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :avatar, class: "col-md-2 text-center" %>
+    <div class="col-md-3">
+      <%= f.file_field :avatar, type: "file"%>
     </div>
   </div>
   <div class="form-group">
@@ -41,6 +49,8 @@
   <div class="form-group">  
     <div class="col-md-offset-2 col-md-10">
       <%= f.submit "Update Profile", class: "btn btn-primary" %>
+      <span></span>
+      <%= f.submit "Cancel", class: "btn btn-default", type: "reset" %>
     </div>  
   </div>
 <% end %>
