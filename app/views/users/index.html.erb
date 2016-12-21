@@ -1,16 +1,16 @@
 <% @profile.each do |p| %>
-  <div class="container mt-5 shdw">
+  <div class="container mt-25 shdw">
     <div class="we1ll">
       <div class="row">
-        <div class="col-md-3">
-          <%= image_tag p.avatar.url(:medium) %><br>
+        <div class="col-md-3 right-border">
+          <%= image_tag p.avatar.url(:medium), class:"img-responsive center-block"  %><br>
           <hr>
-          <%= "Member since  #{@user.find(@profile.find(p.id).user_id).created_at.strftime("%B %d, %Y ")}" %>
+          <p class="text-center"><%= "Member since  #{@user.find(@profile.find(p.id).user_id).created_at.strftime("%B %d, %Y ")}" %></p>
         </div>
           <div class="col-md-6">
             <h1><%= p.first_name %>
-            <%= " #{p.last_name}" %></h1><br>
-            <h3><span><%= job_title_icon_index(p.job_title) %>&nbsp</span><%= p.job_title %></h3><br>
+            <%= " #{p.last_name}" %></h1>
+            <h3><span><%= job_title_icon_index(p.job_title) %></span>&nbsp<%= p.job_title %></h3><br>
             <hr>
             <h3><u>Contact Info</u></h3><br>
             <% if current_user.plan_id == 2 %>
@@ -20,6 +20,7 @@
               <i class="fa fa-phone fa-lg" aria-hidden="true">&nbsp&nbsp&nbsp</i>
               <%= p.phone_number %><br>
             <% else %>
+              <hr>
               <p class="help-block">Become a pro member to see contact details.</p>
             <% end %>
             <hr>

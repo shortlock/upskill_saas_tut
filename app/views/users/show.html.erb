@@ -1,7 +1,7 @@
 <div class="container mt-100 shdw">
   <div class="row">
-    <div class="col-md-3">
-      <%= image_tag @user.profile.avatar.url(:medium) %><br>
+    <div class="col-md-3 right-border">
+      <%= image_tag @user.profile.avatar.url(:medium), class:"img-responsive center-block" %><br>
       <hr>
       <%= "Member since #{@date}" %>
     </div>
