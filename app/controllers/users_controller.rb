@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-  before_action :select_user, :is_logged_in? , only: :show
+  before_action :select_user, :is_logged_in?
   
   # GET to /users/:id
   def show
     @user = User.find( params[:id])
     @profile = Profile.where(user_id: params[:id])
+    @date = User.find( params[:id]).created_at.strftime("%B %d, %Y ")
   end
   
   def index

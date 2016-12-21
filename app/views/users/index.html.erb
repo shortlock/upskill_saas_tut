@@ -1,2 +1,30 @@
-<%= @user.inspect %>
-<%= @profile.inspect %>
+<% @profile.each do |p| %>
+  <div class="container mt-100 shdw">
+    <div class="we1ll">
+      <div class="row">
+        <div class="col-md-3">
+          <%= image_tag p.avatar.url(:medium) %><br>
+          <hr>
+          <%= "Member since #{p.created_at.strftime("%B %d, %Y ")}" %>
+        </div>
+          <div class="col-md-6">
+            <h1><%= p.first_name %>
+            <%= " #{p.last_name}" %></h1><br>
+            <h3><%= p.job_title %></h3><br>
+            <hr>
+            <% if current_user.plan_id == 2 %>
+            <i class="fa fa-envelope" aria-hidden="true">&nbsp&nbsp&nbsp</i>
+            <%= p.contact_email %><br>
+            <br>
+            <i class="fa fa-phone" aria-hidden="true">&nbsp&nbsp&nbsp</i>
+            <%= p.phone_number %><br>
+            <% else %>
+            <p class="help-block">Become a pro member to get see contact details.</p>
+            <% end %>
+            <hr>
+            <%= p.description %><br>
+          </div>
+      </div>
+    </div>
+  </div>
+<% end %>
