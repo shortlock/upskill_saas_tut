@@ -1,4 +1,4 @@
-<div class="container mt-100 shdw">
+<div class="container mt-25 shdw">
   <div class="row">
     <div class="col-md-3 right-border text-center">
       <%= image_tag @user.profile.avatar.url(:medium), class:"img-responsive center-block" %>
@@ -7,7 +7,7 @@
       <%= "Member since #{@date}" %>
       <br>
       <br>
-      <% if current_user.plan_id == 2 %>
+      <% if current_user.plan_id == 2 || current_user == @user %>
         <span><i class='fa fa-envelope fa-lg aria-hidden="true"'></i>&nbsp&nbsp&nbsp</span>
         <%= @user.profile.contact_email %>
         <br>

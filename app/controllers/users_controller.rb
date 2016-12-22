@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :select_user ,:is_logged_in?
+  before_action :select_user , :authenticate_user!
   
   # GET to /users/:id
   def show
@@ -18,11 +18,5 @@ class UsersController < ApplicationController
       flash[:notice] = "User or profile does not exist."
       redirect_to root_url
     end
-  def is_logged_in?
-    unless user_signed_in?
-      flash[:notice] = "Please log in to view profiles."
-      redirect_to root_url
-    end
-  end
   end
 end

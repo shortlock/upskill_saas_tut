@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
-  before_action :only_yours, only: :edit
+  before_action :authenticate_user!
+  before_action :only_yours
   
   # GET to /users/:user_id/profile/new
   def new
@@ -51,8 +52,8 @@ class ProfilesController < ApplicationController
     
     def only_yours
       @user = User.find(params[:user_id])
-      if current_user.id != (@user.id)
-        flash[:notice] = "Cannot edit someone elses profile!"
+      unless current_user == @user
+        flash[:danger] = "Cannot edit someone elses profile!"
         redirect_to root_url
       end
     end
