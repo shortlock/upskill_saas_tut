@@ -6,7 +6,7 @@
           <div class="container mt-25 shdw">
             <div class="well <%= cycle('white-bg', '') %>">
               <div class="row">
-                <div class="col-lg-4 right-border text-center">
+                <div class="col-md-4 right-border text-center">
                   <%= link_to p do %>
                     <%= image_tag p.profile.avatar.url(:medium), class:"img-responsive center-block"  %>
                   <% end %>
@@ -15,12 +15,19 @@
                   <p class="text-center"><%= "Member since  #{p.created_at.strftime("%B %d, %Y ")}" %></p>
                   <br>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-md-8">
                   <%= link_to p do %>
                   <h1><%=p.profile.first_name %>
                   <%= " #{p.profile.last_name}" %></h1>
                   <% end %>
-                  <h3><span><%= job_title_icon_index(p.profile.job_title) %></span>&nbsp<%=p.profile.job_title %></h3>
+                  <p>
+                    <h3>
+                    <%= job_title_icon_index(p.profile.job_title) %></span>&nbsp<%=p.profile.job_title %>
+                    <% if p.plan_id == 2 %>
+                      <span class="label label-danger">Pro</span>
+                    <% end %>
+                    </h3>
+                  </p>
                   <!--<br>-->
                   <hr>
                   <!--<h3><u>Description</u></h3>-->
