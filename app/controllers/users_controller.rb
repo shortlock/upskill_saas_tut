@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   end
   
   def index
-    @user = User.all
-    @profile = Profile.all
+    @user = User.includes(:profile)
   end
+  
   private
   def select_user
     unless Profile.where(user_id: params[:id]).exists? || params[:action] == "index"

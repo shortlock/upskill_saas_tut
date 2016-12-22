@@ -27,7 +27,7 @@
         <h1><%= @user.profile.first_name %>
         <%= " #{@user.profile.last_name}" %></h1>
         <br>
-        <h3><span class="job-title-icon"><%= job_title_icon %></span><%= @user.profile.job_title %></h3>
+        <h3><span class="job-title-icon"><%= job_title_icon %></span>&nbsp<%= @user.profile.job_title %></h3>
         <br>
         <h3><u>Description</u></h3>
         <p style="white-space: pre-wrap;"><%= @user.profile.description %></p>
