@@ -39,7 +39,7 @@ class ProfilesController < ApplicationController
     if @profile.update_attributes(profile_params)
       flash[:success] = "Profile Updated!"
       # Redirects user to their profile page
-      redirect_to user_path(id: params[id: :user_id])
+      redirect_to user_path( params[:user_id])
     else
       render action :edit
     end
