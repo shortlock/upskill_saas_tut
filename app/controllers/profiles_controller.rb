@@ -1,5 +1,4 @@
 class ProfilesController < ApplicationController
-  before_action :authenticate_user!
   before_action :only_yours
   
   # GET to /users/:user_id/profile/new
@@ -25,21 +24,21 @@ class ProfilesController < ApplicationController
   
   # Get requests made to /users/:user_id/profile/edit
   def edit
-    @user = User.find(params[:user_id])
-    @profile = @user.profile
+      @user = current_user
+      @profile = @user.profile
   end
   
   # PUT/PATCH reuest to /users/:user_id/profile
   def update
     # Retrieve user from database
-    @user = User.find(params[:user_id])
+    @user = current_user
     # Retrieve that user's profile
     @profile = @user.profile
     # Mass assigned editied profile and saved(updated)
     if @profile.update_attributes(profile_params)
       flash[:success] = "Profile Updated!"
       # Redirects user to their profile page
-      redirect_to user_path( params[:user_id])
+      redirect_to user_path( current_user.id)
     else
       render action :edit
     end
@@ -51,9 +50,14 @@ class ProfilesController < ApplicationController
     end
     
     def only_yours
-      @user = User.find(params[:user_id])
+      if User.exists?(:id => params[:user_id])
+       @user = User.find(params[:user_id])
       unless current_user == @user
-        flash[:danger] = "Cannot edit someone elses profile!"
+        flash[:notice] = "Cannot edit someone elses profile!"
+        redirect_to root_url
+      end
+      else
+        flash[:notice] = "User or Profile doesn't exist."
         redirect_to root_url
       end
     end
