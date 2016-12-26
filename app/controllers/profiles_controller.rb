@@ -47,7 +47,7 @@ class ProfilesController < ApplicationController
   def destroy
     Profile.find(params[:id]).destroy
     flash[:success] = "Profile deleted"
-    redirect_to users_url
+    redirect_to admin_path
   end
   
   private

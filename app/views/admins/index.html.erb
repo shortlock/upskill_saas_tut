@@ -40,8 +40,7 @@
       <% end %>
     </tbody>
   </table>
-  
-<div class="container-fluid text-center">
+  <hr>  
   <h3>Users Table</h3>
   <table class="table table-bordered table-striped table-condensed">
     <tr>
@@ -85,7 +84,7 @@
       <% end %>
     </tbody>
   </table>
-  
+  <hr>
   <h3>Contacts Form Table</h3>
   <table class="table table-bordered table-striped table-condensed">
     <tr>
@@ -112,7 +111,7 @@
               </button>
               <ul class="dropdown-menu dropdown-menu-right">
                 <li><a href="#">Edit</a></li>
-                <li><%= link_to "Destroy", '#', method: :delete, data: { confirm: "You sure?" } %></li>
+                <li><%= link_to "Destroy", admin_destroy_contact_path(p), method: :delete, data: { confirm: "You sure?" } %></li>
                 <li><a href="#">Reset Password</a></li>
               </ul>
             </div>
@@ -121,4 +120,5 @@
       <% end %>
     </tbody>
   </table>
+  <hr>
 </div>

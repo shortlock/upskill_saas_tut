@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   get 'admin', to: 'admins#index'
   match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
   match 'profiles/:id' => 'profiles#destroy', :via => :delete, :as => :admin_destroy_profile
-
+  match 'contacts/:id' => 'admins#destroy_contact', :via => :delete, :as => :admin_destroy_contact
 
 end

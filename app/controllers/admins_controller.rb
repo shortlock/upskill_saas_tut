@@ -8,6 +8,12 @@ class AdminsController < ApplicationController
     @contact = Contact.all
   end
   
+  def destroy_contact
+    @contact = Contact.find(params[:id]).destroy
+    flash[:success] = "Contact entry deleted."
+    redirect_to admin_path
+  end
+  
   private
   
     def is_admin?
