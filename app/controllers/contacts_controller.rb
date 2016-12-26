@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-    
+    skip_before_filter :authenticate_user!
     #GET request to /contact-us
     #Show new contact form
     def new

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :select_user
+  before_action :select_user, except: :destroy
   
   # GET to /users/:id
   def show
@@ -11,7 +11,13 @@ class UsersController < ApplicationController
   def index
     @user = User.includes(:profile)
   end
-  
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
+  end
+    
   private
   def select_user
     unless Profile.where(user_id: params[:id]).exists? || params[:action] == "index"
