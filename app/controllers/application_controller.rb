@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   #whitelist the following form fields so we can process them if coming from 
   #devise sign up form
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :authenticate_user!, except: [:home, :about]
+  before_action :authenticate_user!, except: [:home, :about, :robot]
 
 
   

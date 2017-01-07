@@ -3,9 +3,9 @@ class AdminsController < ApplicationController
 
   
   def index
-    @user = User.all
-    @profile = Profile.all
-    @contact = Contact.all
+    @user = User.all.page params[:page]
+    @profile = Profile.all.page params[:page]
+    @contact = Contact.all.page params[:page]
   end
   
   def destroy_contact

@@ -17,7 +17,7 @@ class ProfilesController < ApplicationController
       flash[:success] = "Profile updated!"
       redirect_to user_path(params[:user_id])
     else
-      flash[:error] = "Please complete all fields"
+      flash[:danger] = "Please complete all fields"
       render action: :new
     end
   end

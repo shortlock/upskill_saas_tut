@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '5.0.0'
 # Use Puma as the app server
 gem 'puma', '3.4.0'
+
+gem 'dotenv-rails', :groups => [:development, :test]
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.6'
 # Use Uglifier as compressor for JavaScript assets
@@ -52,9 +55,12 @@ gem 'thor', '0.19.1'
 #Use paperclip for image upload
 gem 'paperclip', '4.3.6'
 
-gem 'administrate'
-
 gem 'bourbon'
+
+gem 'recaptcha', require: "recaptcha/rails"
+
+gem 'kaminari'
+
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

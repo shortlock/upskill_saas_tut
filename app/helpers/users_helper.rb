@@ -9,7 +9,7 @@ module UsersHelper
     end
   end
   
-    def job_title_icon_index(n)
+  def job_title_icon_index(n)
     if n == "Developer"
       "<i class='fa fa-code job-title-icon'></i>".html_safe
     elsif n == "Entrepeneur"

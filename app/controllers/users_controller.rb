@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    @user = User.includes(:profile)
+    @user = User.includes(:profile).page params[:page]
   end
 
   def destroy

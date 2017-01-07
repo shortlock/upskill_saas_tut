@@ -7,6 +7,9 @@ class User < ApplicationRecord
   belongs_to :plan
   has_one :profile
   
+  paginates_per 2
+
+  
   attr_accessor :stripe_card_token
   #If pro user passes validations(email, password etc.)
   # then call stripe and tell stripe to set up a subscription

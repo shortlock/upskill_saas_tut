@@ -2,6 +2,9 @@
   <h1 class="text-center">DevMatch Community</h1>
   <p class="text-center">Welcome to the DevMatch community. Users must fill out a profile in order to be visible in the community.</p>
   <ul>
+    <div class="text-center">
+      <%= paginate @user %>
+    </div>
     <% @user.each do |p| %>
       <% if p.profile %>  
         <li class="list-unstyled">
