@@ -7,8 +7,7 @@ class User < ApplicationRecord
   belongs_to :plan
   has_one :profile
   
-  paginates_per 2
-
+  paginates_per 5
   
   attr_accessor :stripe_card_token
   #If pro user passes validations(email, password etc.)

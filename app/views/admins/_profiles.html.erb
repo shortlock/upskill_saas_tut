@@ -1,0 +1,42 @@
+<h3>Profiles Table</h3>
+<table class="table table-bordered table-striped table-condensed">
+  <tr>
+    <th class="text-center">Name</th>
+    <th class="text-center">Email address</th>
+    <th class="text-center">Phone Number</th>
+    <th class="text-center">User Id</th>
+    <th class="text-center">Profile Id</th>
+    <th class="text-center">Description</th>
+    <th class="text-center">Avatar</th>
+    <th class="text-center">Actions</th>
+  </tr>
+  <tbody>
+    <% @profile.each do |p| %>
+      <tr>
+        <td><%= p.first_name %> <%= " #{p.last_name}" %></td>
+        <td><%= p.contact_email %></td>
+        <td><%= p.phone_number %></td>
+        <td><%= p.user_id %></td>
+        <td><%= p.id %></td>
+        <td><%= p.description.lines.first %></td>
+        <td><%= image_tag p.avatar.url(:thumb), class: "img-responsive thumb-img" %></td>
+        <td><!-- Single button -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Action <span class="caret"></span>
+              <span class="sr-only"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><%= link_to "Edit", edit_user_profile_path(p.id) %></li>
+              <li><%= link_to "Destroy", admin_destroy_profile_path(p), data: { confirm: "Are you sure?" }, method: :delete %></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to "See Profile", user_path(p.user_id) %></a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  

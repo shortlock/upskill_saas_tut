@@ -1,0 +1,43 @@
+<h3>Users Table</h3>
+<table class="table table-bordered table-striped table-condensed">
+  <tr>
+    <th class="text-center">User Id</th>
+    <th class="text-center">Email</th>
+    <th class="text-center">Plan</th>
+    <th class="text-center">Created</th>
+    <th class="text-center">Last Signed in</th>
+    <th class="text-center">Actions</th>
+  </tr>
+  <tbody>
+    <% @user.each do |p| %>
+      <tr>
+        <td><%= p.id %></td>
+        <td><%= p.email %></td>
+        <td>
+          <% if p.plan_id == 2 %>
+            <span class="label label-danger">Pro</span>
+          <% else %>
+            <span class="label label-info">Basic</span>
+          <% end %>
+        </td>
+        <td><%= p.created_at %></td>
+        <td><%= p.last_sign_in_at %></td>
+        <td><!-- Single button -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Action <span class="caret"></span>
+              <span class="sr-only"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a href="#">Edit</a></li>
+              <li><%= link_to "Destroy", admin_destroy_user_path(p), method: :delete, data: { confirm: "You sure?" } %></li>
+              <li><a href="#">Reset Password</a></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to "See Profile", user_path(p.id) %></a></li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
